@@ -23,8 +23,7 @@ upload = upload[0].replace(",", ".")
 
 mycursor = mydb.cursor()
 
-sql = "INSERT INTO customers (ping, download, upload) VALUES (%s, %s, %s)"
+sql = "INSERT INTO internetspeed (ping, download, upload) VALUES (%s, %s, %s)"
 val = (float(ping), float(download), float(upload))
 mycursor.execute(sql, val)
 mydb.commit()
-print(mycursor.rowcount, "record inserted.")
